@@ -44,7 +44,7 @@ def create_tables():
         firstname varchar(200) not null,
         lastname varchar(200) not null,
         middlename varchar(200),
-        mobilenumber integer unique,
+        mobilenumber varchar (40) unique,
         occupation varchar (40),
         date_of_birth date,
         constraint customer_pk primary key (customerId)
@@ -58,7 +58,7 @@ def create_tables():
         accountstatus varchar(50),
         account_opening_date Date default(current_date),
         constraint  account_pk primary key(accountnumber),
-        constraint account_fk foreign key(customerId) references customer(customerId)
+        constraint account_fk foreign key(customerId) references customer(customerId) on delete cascade 
         )
         ''',
         '''
@@ -70,7 +70,7 @@ def create_tables():
         transactionamount integer not null,
         transactionmedium varchar (50) not null,
         constraint transactions_pk primary key(transactionId),
-        constraint transactions_fk foreign key(accountnumber) references account(accountnumber)
+        constraint transactions_fk foreign key(accountnumber) references account(accountnumber) on delete cascade 
         )
         '''
     ]
