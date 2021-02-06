@@ -50,11 +50,13 @@ def new_account_creation():
 
 def perform_transactions():
     account_number = int(input("Enter your account_number"))
-    transactiontype = int(input("Enter 1 for withdrawal, 2 for a tranfer"))
+    transactiontype = int(input("Enter 1 for withdrawal, 2 for a tranfer, 3 for deposit"))
     if transactiontype == 1:
         transactiontype = "withdrawal"
     if transactiontype == 2:
         transactiontype = "transfer"
+    if transactiontype == 3:
+        transactiontype = "deposit"
 
     transactionamount = int(input("Enter an amount "))
     transactionmedium = input("Select 1 for mobile transfer, 2 for ATM ")
