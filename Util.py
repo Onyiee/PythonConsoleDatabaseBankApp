@@ -3,7 +3,6 @@ from Db_Connection import *
 
 def initialize():
     connection = initialize_connection()
-    use_database()
     create_tables()
     return connection
 
