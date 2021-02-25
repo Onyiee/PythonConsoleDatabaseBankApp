@@ -1,10 +1,11 @@
-import getpass
+
 import mysql.connector
+import stdiomask
 from mysql.connector import Error
 import os
 
 username_str = input("Enter your db username: ")
-password_str = getpass.win_getpass()
+password_str = stdiomask.getpass()
 db_name = input("Enter db name ")
 
 conn = None
@@ -76,7 +77,4 @@ def create_tables():
     for query in queries:
         conn.cursor().execute(query)
 
-# initialize_connection()
-# use_database()
-# create_tables()
-# close_connection()
+
